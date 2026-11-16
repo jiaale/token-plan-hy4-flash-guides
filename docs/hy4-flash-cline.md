@@ -1,10 +1,10 @@
-# Use Hy4 flash in Cline with Tencent Cloud Token Plan
+# Hy4 flash Coding Setup with Tencent Cloud Token Plan (Cline)
 
-Connect Cline to **Hy4 flash through Tencent Cloud TokenHub**, build a small browser-based app, and check how many plan credits the task uses.
+Use your **Tencent Cloud Personal Token Plan subscription** to run **Hy4 flash in Cline**, build a small browser-based app, and check the credits used by the task.
 
-This guide covers **Personal Token Plan on Tencent Cloud's international service**, using the Cline extension in VS Code. Pay-as-you-go keys use a different setup.
+This guide covers **Personal Token Plan on Tencent Cloud's international service**, using the Cline extension in VS Code. **Token Plan is the subscription, Hy4 flash is the model, and TokenHub is the platform where you manage the plan and usage.**
 
-**[View TokenHub plans and pricing][tokenhub]** · **[Back to the README](../README.md)**
+**[Compare Token Plan subscriptions][tokenplan]** · **[Back to the README](../README.md)**
 
 ## Before you begin
 
@@ -17,14 +17,16 @@ You need:
 
 Token Plan is a paid subscription. TokenHub's free model token allocation is separate and cannot be used as plan credits. See the [official Token Plan FAQ](https://www.tencentcloud.com/document/product/1300/81318).
 
-## 1. Get your Token Plan key
+## 1. Choose a Token Plan and get your key
 
-1. Open the [TokenHub product page][tokenhub], review the current plans, and choose the plan that fits your usage.
-2. Complete the subscription through Tencent Cloud if you do not already have one.
+1. Open the [Token Plan subscription options][tokenplan] and compare Lite, Standard, Pro, and Max. Check the current monthly credits, supported models, and checkout price.
+2. Subscribe to an eligible Personal Token Plan if you do not already have one. If you have an active subscription, check that Hy4 flash is available and credits remain.
 3. In the Tencent Cloud console, open **TokenHub → Token Plan**.
 4. Generate or copy the dedicated API key shown for your plan. Personal Token Plan keys typically begin with `sk-tp-`.
 
-Use this key in Cline's provider settings. Keep it out of source files, Git commits, prompts, and screenshots.
+The subscription provides model usage through supported AI tools. You install Cline separately, then connect it using this dedicated plan key. Keep the key out of source files, Git commits, prompts, and screenshots.
+
+Use the subscription price and the applicable credit deduction rules to understand this workflow's cost. Hy4 flash's separate per-million-token API prices are not a Token Plan subscription price. Current plan terms are documented in the [Token Plan overview](https://www.tencentcloud.com/document/product/1300/81315).
 
 The [official Token Plan Quick Start](https://www.tencentcloud.com/document/product/1300/81317) explains where to find the key and how to check plan usage.
 
@@ -35,7 +37,7 @@ The [official Token Plan Quick Start](https://www.tencentcloud.com/document/prod
 3. Open your empty project folder in VS Code.
 4. Open Cline from the sidebar, then open its settings.
 
-You will use your TokenHub key as the model provider credential. This walkthrough does not use Cline's own model billing service.
+You will use your dedicated **Personal Token Plan key** as the model provider credential. Model usage is deducted from your plan's credits; this walkthrough does not use Cline's own model billing service.
 
 ## 3. Configure Hy4 flash
 
@@ -56,7 +58,7 @@ Three details matter:
 - Use the **plan** base URL above. Do not substitute the general TokenHub `/v1` address or append `/chat/completions` to this field.
 - Use **`hy4-flash`**, not `hy4 flash`, `hy4`, or `hy4-preview`.
 
-If you have enabled **Use different models for Plan and Act**, set the same TokenHub provider and `hy4-flash` model for both modes during this first test. Otherwise, switching modes may also switch your model provider.
+If you have enabled **Use different models for Plan and Act**, set the same OpenAI Compatible provider, plan base URL, plan key, and `hy4-flash` model for both modes during this first test. Otherwise, switching modes may also switch your model provider.
 
 Leave optional advanced settings at their defaults for the first text-only task. If your version requires custom model limits, check the current official specifications before changing them. A large context window is a capacity limit, not a reason to include an entire repository in every request.
 
@@ -145,12 +147,12 @@ The numeric error codes above are documented in the [official Token Plan Quick S
 
 Try a focused change in a small existing project, such as adding a unit test or fixing a reproducible bug. Compare the time, retries, and credits required before expanding to larger workflows.
 
-**[Review current TokenHub plans and pricing][tokenhub]**
+**[Review Token Plan subscriptions for Hy4 flash][tokenplan]**
 
 ---
 
 **Documentation checked: November 16, 2026.** This revision has been reviewed against public setup documentation. A live end-to-end run in Cline has not yet been performed. Interface labels may vary by extension version.
 
-This tutorial is maintained for TokenHub developer education and promotion. Product links include campaign attribution parameters.
+This tutorial is maintained for Tencent Cloud Token Plan developer education and promotion. TokenHub provides the underlying platform. Product links include campaign attribution parameters.
 
-[tokenhub]: https://www.tencentcloud.com/act/pro/tokenhub?lang=en&pg=&fromSource=intl.25875112.25875112.25875112&utm_medium=cpc&utm_id=intl.25875112.25875112.25875112
+[tokenplan]: https://www.tencentcloud.com/act/pro/tokenhub?lang=en&pg=&fromSource=intl.25875112.25875112.25875112&utm_medium=cpc&utm_id=intl.25875112.25875112.25875112
