@@ -1,38 +1,45 @@
-# Tencent Cloud TokenHub: Hy4 flash & Cline Guides
+# Use Hy4 flash with Tencent Cloud Token Plan
 
-Practical guides for using **Hy4 flash through Tencent Cloud TokenHub** in your everyday coding workflow. Start with Cline, complete a small task, and check your usage before moving to a larger project.
+Use **Hy4 flash with a Tencent Cloud Personal Token Plan** in supported AI tools. This repository helps you choose a subscription, connect your coding tool, and check the credits used by a small task. The first walkthrough uses Cline in VS Code.
 
-**[View TokenHub plans and pricing][tokenhub]** · **[Set up Hy4 flash in Cline](docs/hy4-flash-cline.md)**
+**[Compare Token Plan subscriptions][tokenplan]** · **[Set up Hy4 flash in Cline](docs/hy4-flash-cline.md)**
 
-## What is TokenHub?
+## What you are subscribing to
 
-Tencent Cloud TokenHub provides access to Tencent Hunyuan and supported third-party models through compatible interfaces. **Hy4 flash is a model available through TokenHub; Token Plan is a subscription option for supported AI tools.**
+**Personal Token Plan** is Tencent Cloud's paid subscription for supported AI tools, with monthly credits and a dedicated plan key. It is available through **TokenHub**, Tencent Cloud's model service platform.
 
-Choose the access option that fits your work:
+| Name | Role in this guide |
+| --- | --- |
+| **Token Plan** | The subscription you purchase and use in a supported tool |
+| **Hy4 flash** | The model selected for the coding walkthrough, with model ID `hy4-flash` |
+| **TokenHub** | The Tencent Cloud platform where you manage the plan, key, and usage |
 
-| Your workflow | Access option | Where to start |
-| --- | --- | --- |
-| Use a supported AI coding tool such as Cline | Personal Token Plan, with a dedicated plan key and monthly credits | [Hy4 flash + Cline guide](docs/hy4-flash-cline.md) |
-| Add model calls to your own application or backend | TokenHub pay-as-you-go API access | [Explore TokenHub][tokenhub] and consult the [Language Model API Overview](https://www.tencentcloud.com/document/product/1300/80632) |
+A plan provides access to its currently supported models, so you can switch models within the subscription. Model availability and credit deduction rates may change; check the [official Token Plan overview](https://www.tencentcloud.com/document/product/1300/81315) and your console before starting.
 
-Personal Token Plan and pay-as-you-go access have different keys, endpoints, and billing rules. The Cline tutorial in this repository covers **Personal Token Plan on Tencent Cloud's international service**.
+## Start with a Token Plan
 
-## Why start with Hy4 flash?
+1. **[Compare Lite, Standard, Pro, and Max][tokenplan].** Review the monthly credits, supported tools, and current checkout price.
+2. **Subscribe to a Personal Token Plan** that fits your expected usage. If you already have an active plan, check its remaining credits.
+3. **Get the dedicated plan key** from **TokenHub → Token Plan** in the Tencent Cloud console.
+4. **[Connect Hy4 flash in Cline](docs/hy4-flash-cline.md)**, complete a small coding task, and review the plan credits consumed.
 
-Hy4 flash is positioned as a cost-effective model for everyday coding assistance, agent workflows, and document or chart understanding. Its advertised capabilities include a **1M-token context window** and **image understanding**. See the [current product information][tokenhub] for availability and pricing.
+The subscription covers model usage through supported tools. Cline is the coding tool used in this walkthrough; you install and configure it separately.
 
-Useful tasks to try include:
+## Why try Hy4 flash?
 
-- Building a small browser-based utility from a clear specification.
-- Explaining unfamiliar code and making a focused change.
-- Adding tests or investigating a bug in a small project.
-- Discussing a screenshot when image input is enabled in your client.
+Hy4 flash is the featured model in this guide. Tencent Cloud lists a **1M-token context window**, **image understanding**, **function calling**, and **structured output** among its capabilities. See the [official model specifications](https://www.tencentcloud.com/document/product/1300/78934).
 
-Start with a task whose result you can inspect. A model's context limit or feature list does not, by itself, establish how well it will complete your particular task.
+Start with a task whose result you can inspect:
+
+- Build a small browser-based utility from a clear specification.
+- Explain unfamiliar code and make a focused change.
+- Add a test or investigate a reproducible bug.
+
+The tutorial includes a Pomodoro timer task with concrete acceptance checks. Record the result, repair attempts, and credits used to evaluate whether the setup fits your work.
 
 ## Quick configuration: Hy4 flash in Cline
 
-After purchasing an eligible Personal Token Plan and obtaining its dedicated API key, configure Cline as follows:
+After subscribing and obtaining your dedicated Personal Token Plan key:
 
 | Cline setting | Value |
 | --- | --- |
@@ -41,35 +48,42 @@ After purchasing an eligible Personal Token Plan and obtaining its dedicated API
 | API Key | Your dedicated Token Plan key, typically beginning with `sk-tp-` |
 | Model ID | `hy4-flash` |
 
-Use the exact model ID, including the hyphen. Enter the base URL as shown; do not append `/chat/completions` to Cline's Base URL field.
+Enter the base URL exactly as shown. Do not append `/chat/completions`. If you use separate Plan and Act configurations in Cline, configure the same provider and model in both for your first task.
 
-**[Follow the complete Cline tutorial](docs/hy4-flash-cline.md)** for installation, a first task, usage checks, and troubleshooting. The settings follow Tencent Cloud's [Cline integration guide](https://www.tencentcloud.com/document/product/1300/81039) and [Token Plan model list](https://www.tencentcloud.com/document/product/1300/81315).
+**[Follow the complete Hy4 flash coding setup tutorial](docs/hy4-flash-cline.md)** for installation, configuration, a first task, usage checks, and troubleshooting.
 
-## Understand what you are buying
+Configuration sources: [Tencent Cloud's Cline guide](https://www.tencentcloud.com/document/product/1300/81039) and [Token Plan models and endpoints](https://www.tencentcloud.com/document/product/1300/81315).
 
-- **Personal Token Plan:** a subscription with monthly credits for supported AI tools. It is not an unrestricted API subscription for custom backends or non-interactive batch scripts.
-- **Free model tokens:** separate from Personal Token Plan credits. A free trial allocation does not fund the plan.
-- **When plan credits run out:** upgrade or wait for the next subscription cycle. The plan does not automatically switch to pay-as-you-go billing.
-- **Prices and promotions:** check the current offer and checkout details before buying; this repository does not maintain a separate price list.
+## Check the plan terms before subscribing
+
+- **Monthly credits:** usage is deducted according to the selected model and its applicable credit rates. Unused monthly credits do not carry over.
+- **Supported tools:** Personal Token Plan is for eligible AI tools. Its key must not be used for custom application backends or non-interactive batch scripts.
+- **Free model tokens:** TokenHub's separate free model allocation does not fund Token Plan credits.
+- **Exhausted credits:** requests stop when the allowance is exhausted. The plan does not automatically switch to pay-as-you-go billing; check the available upgrade or next-cycle options.
+- **Prices and promotions:** use the current subscription and checkout terms. Per-million-token API prices are a separate billing option, not the price of a Token Plan subscription.
 
 Sources: [Token Plan Overview](https://www.tencentcloud.com/document/product/1300/81315) and [Token Plan FAQs](https://www.tencentcloud.com/document/product/1300/81318).
 
-**[Compare current plans and get started with TokenHub][tokenhub]**
+**[Choose a Token Plan for Hy4 flash][tokenplan]**
+
+## Need model access for your own application?
+
+TokenHub also offers separate pay-as-you-go API access for applications and backends. That route has different credentials, endpoints, and billing rules. See the [Language Model API Overview](https://www.tencentcloud.com/document/product/1300/80632). This repository's Cline walkthrough uses Personal Token Plan.
 
 ## Documentation and feedback
 
 | Resource | Purpose |
 | --- | --- |
-| [Hy4 flash in Cline](docs/hy4-flash-cline.md) | Step-by-step setup and a first coding task |
+| [Hy4 flash coding setup with Token Plan](docs/hy4-flash-cline.md) | Step-by-step Cline setup and a first coding task |
 | [Official Token Plan Quick Start](https://www.tencentcloud.com/document/product/1300/81317) | Key management, usage details, and error codes |
-| [Official Cline provider setup](https://docs.cline.bot/provider-config/openai-compatible) | How Cline configures a compatible model provider |
+| [Official Cline provider setup](https://docs.cline.bot/provider-config/openai-compatible) | Compatible model provider settings |
 
-If a step is unclear, open an issue with your Cline version, operating system, and the error message. Remove API keys and other sensitive information from screenshots or logs. Account and billing issues should go through Tencent Cloud support.
+If a step is unclear, open an issue with your Cline version, operating system, and a redacted error message. Account and billing issues should go through Tencent Cloud support.
 
 ## About this repository
 
-Maintained on a personal GitHub account for TokenHub developer education and promotion. This repository is not an official Tencent Cloud support channel. Product links contain campaign attribution parameters.
+Maintained on a personal GitHub account for Tencent Cloud Token Plan developer education and promotion. TokenHub provides the underlying platform. This repository is not an official Tencent Cloud support channel. Product links contain campaign attribution parameters.
 
 **Documentation checked: November 16, 2026.** These guides are based on public product documentation. A live end-to-end Cline test has not yet been completed for this revision; no benchmark or cost-saving results are claimed.
 
-[tokenhub]: https://www.tencentcloud.com/act/pro/tokenhub?lang=en&pg=&fromSource=intl.25875112.25875112.25875112&utm_medium=cpc&utm_id=intl.25875112.25875112.25875112
+[tokenplan]: https://www.tencentcloud.com/act/pro/tokenhub?lang=en&pg=&fromSource=intl.25875112.25875112.25875112&utm_medium=cpc&utm_id=intl.25875112.25875112.25875112
