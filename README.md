@@ -4,6 +4,8 @@ Use **Hy4 flash with a Tencent Cloud Personal Token Plan** in supported AI tools
 
 **[Compare Token Plan subscriptions][tokenplan]** · **[Set up Hy4 flash in Cline](docs/hy4-flash-cline.md)**
 
+**[DeepSeek chat limits: API access or Token Plan?](docs/deepseek-chat-limits-api-token-plan.md)**
+
 ## What you are subscribing to
 
 **Personal Token Plan** is Tencent Cloud's paid subscription for supported AI tools, with monthly credits and a dedicated plan key. It is available through **TokenHub**, Tencent Cloud's model service platform.
@@ -75,6 +77,7 @@ TokenHub also offers separate pay-as-you-go API access for applications and back
 | Resource | Purpose |
 | --- | --- |
 | [Hy4 flash coding setup with Token Plan](docs/hy4-flash-cline.md) | Step-by-step Cline setup and a first coding task |
+| [DeepSeek chat limits: API access or Token Plan?](docs/deepseek-chat-limits-api-token-plan.md) | Choose between chat clients, general APIs, and a Token Plan workflow with DeepSeek or Hy4 flash |
 | [Official Token Plan Quick Start](https://www.tencentcloud.com/document/product/1300/81317) | Key management, usage details, and error codes |
 | [Official Cline provider setup](https://docs.cline.bot/provider-config/openai-compatible) | Compatible model provider settings |
 
